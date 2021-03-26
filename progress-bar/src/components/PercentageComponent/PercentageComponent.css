@@ -1,0 +1,8 @@
+
+.completed {
+    background: limegreen;
+    height: 100%;
+    border-radius: inherit;
+    transition: width .3s ease-in;
+}
+

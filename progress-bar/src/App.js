@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { ProgressBarContainer } from './containers/ProgressBarContainer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
