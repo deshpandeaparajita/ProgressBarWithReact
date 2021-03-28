@@ -5,8 +5,12 @@ import ProgressBarContainer from './ProgressBarContainer';
 
 
 describe('ProgressBarContainer', () => {
+    const props = {
+        handleClick: jest.fn(),
+    };
+
     it('should match snapshot', () => {
-        const component = shallow(<ProgressBarContainer />);
+        const component = shallow(<ProgressBarContainer {... props} />);
         expect(component).toMatchSnapshot();
     });
 });

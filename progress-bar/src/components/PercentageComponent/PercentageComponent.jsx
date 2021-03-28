@@ -3,7 +3,7 @@ import './PercentageComponent.css';
 
 
 export const PercentageComponent = (props) => {
-    
+
     return (
         props.percentRange === 100 ? (
             <div className="completed" style={{ width: `${props.percentRange}%`, background: 'red' }} />
