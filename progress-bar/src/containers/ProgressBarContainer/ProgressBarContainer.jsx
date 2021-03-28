@@ -20,14 +20,14 @@ export const ProgressBarContainer = (props) => {
 
     }, []);
 
-    const { buttons,limit } = data;
-console.log("limit:", limit);
+    const { buttons, limit } = data;
+
     const handleClick = (e, value) => {
         e.preventDefault();
-        
+
         let newRange = [];
         range && range.map((val) => {
-            
+
             if (val + value < 0) {
                 newRange.push(0);
             } else if (val + value > limit) {
@@ -39,14 +39,24 @@ console.log("limit:", limit);
         setRange(newRange);
 
     }
-    
+
+    function getSum(total, num) {
+        return total + num;
+    }
+
+    console.log("range: ", range);
     return (
         <Container className="main">
+            <Row style={{ marginBottom: "20px" }} >
+                <Col>
+                    Total usage : {range.reduce(getSum, 0)}
+                </Col>
+            </Row>
             <Row >
                 <Col>
                     {range && range.map((value) => {
                         return (
-                            <ProgressBarComponent percent={value} limit={limit}/>
+                            <ProgressBarComponent percent={value} limit={limit} />
                         );
                     })
                     }
@@ -60,7 +70,7 @@ console.log("limit:", limit);
                 </Col>
             </Row>
 
-        </Container>
+        </Container >
     );
 }
 
