@@ -10,8 +10,6 @@ export const IncrementButtonComponent = ({buttons,handleClick}) => {
             })}
         </div>
     );
-
-
 };
 
 
