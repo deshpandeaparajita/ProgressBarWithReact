@@ -44,7 +44,6 @@ export const ProgressBarContainer = (props) => {
         return total + num;
     }
 
-    console.log("range: ", range);
     return (
         <Container className="main">
             <Row style={{ marginBottom: "20px" }} >
@@ -54,9 +53,9 @@ export const ProgressBarContainer = (props) => {
             </Row>
             <Row >
                 <Col>
-                    {range && range.map((value) => {
+                    {range && range.map((value, index) => {
                         return (
-                            <ProgressBarComponent percent={value} limit={limit} />
+                            <ProgressBarComponent percent={value} limit={limit} key={index} />
                         );
                     })
                     }
@@ -73,5 +72,6 @@ export const ProgressBarContainer = (props) => {
         </Container >
     );
 }
+
 
 export default ProgressBarContainer;
