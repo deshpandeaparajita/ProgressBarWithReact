@@ -9,8 +9,8 @@ export const ProgressBarComponent = (props) => {
 
 
     return (
-        <div className="progress-bar" style={{ width: `${props.limit}px` }}>
-            <PercentageComponent percentRange={correctPercentage}  />
+        <div className="progress-bar" style={{ width: `${props.limit}px ` }}>
+            <PercentageComponent percentRange={correctPercentage} />
         </div>
     );
 };
