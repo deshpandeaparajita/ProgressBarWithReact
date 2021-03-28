@@ -20,30 +20,47 @@ export const ProgressBarContainer = (props) => {
 
     }, []);
 
-    const { buttons, bars, limit } = data;
-
+    const { buttons,limit } = data;
+console.log("limit:", limit);
     const handleClick = (e, value) => {
         e.preventDefault();
-        console.log(value);
+        
         let newRange = [];
         range && range.map((val) => {
-            newRange.push(val + value < limit ? val + value : limit);
+            
+            if (val + value < 0) {
+                newRange.push(0);
+            } else if (val + value > limit) {
+                newRange.push(limit);
+            } else {
+                newRange.push(val + value);
+            }
         })
         setRange(newRange);
 
     }
+    
     return (
-        <div className="main">
-            {range && range.map((value) => {
-                return (
-                    <ProgressBarComponent percent={value} />
-                );
-            })
-            }
-            <div>
-                <IncrementButtonComponent buttons={buttons} handleClick={(e, value) => handleClick(e, value)} />
-            </div>
-        </div>
+        <Container className="main">
+            <Row >
+                <Col>
+                    {range && range.map((value) => {
+                        return (
+                            <ProgressBarComponent percent={value} limit={limit}/>
+                        );
+                    })
+                    }
+                </Col>
+            </Row>
+            <Row >
+                <Col>
+                    <div>
+                        <IncrementButtonComponent buttons={buttons} handleClick={(e, value) => handleClick(e, value)} />
+                    </div>
+                </Col>
+            </Row>
+
+        </Container>
     );
 }
 
