@@ -64,7 +64,7 @@ export const ProgressBarContainer = (props) => {
             <Row >
                 <Col>
                     <div>
-                        <IncrementButtonComponent buttons={buttons} handleClick={(e, value) => handleClick(e, value)} />
+                        <IncrementButtonComponent buttons={buttons} onClick={(e, value) => handleClick(e, value)} />
                     </div>
                 </Col>
             </Row>
