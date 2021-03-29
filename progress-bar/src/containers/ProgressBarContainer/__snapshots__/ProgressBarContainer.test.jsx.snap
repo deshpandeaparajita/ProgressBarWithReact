@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProgressBarContainer should match snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`ProgressBarContainer should match snapshot when click on increment button 1`] = `ShallowWrapper {}`;
